@@ -1,0 +1,15 @@
+.CatWrap{
+    display: flex;
+    justify-content: center;
+    flex-flow:column;
+    align-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+.CatName{
+    background: -webkit-gradient(linear,left top,right top,from(#3e23ff),to(#ff2362));
+    background-clip: text!important;
+    -webkit-background-clip: text!important;
+    -webkit-text-fill-color: transparent!important;
+    font-size:50px;
+}

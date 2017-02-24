@@ -1,0 +1,9 @@
+<div class="CatWrap">
+  <h1 class="CatName">{{currentCat.name}}</h1>
+  <img [src]='currentCat.image'
+        [title]='currentCat.name'
+        [alt]='currentCat.name'
+        [style.width.px]='Styles.imageWidth'
+        (click)='imageClicked()'
+  />
+</div>

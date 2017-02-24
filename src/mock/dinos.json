@@ -1,0 +1,29 @@
+[
+        {
+            "id": 0,
+            "name": "Rufus",
+            "image": "",
+            "clicks": 0,
+            "level": 1,
+            "dinoPals": []
+        },
+        {
+            "id": 1,
+            "name": "lassie",
+            "image": "cat2.jpg",
+            "clicks": 0,
+            "level": 1
+
+        },
+        {
+            "id": 2,
+            "name": "salty",
+            "image": "cat2.jpg",
+            "clicks": 0,
+            "level": 3
+
+        },
+        {
+            
+        }
+]
