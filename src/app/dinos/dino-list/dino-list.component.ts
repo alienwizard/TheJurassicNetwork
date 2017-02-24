@@ -13,7 +13,7 @@ export class DinoListComponent implements OnInit {
   listFilter = '';
   errorMessage = '';
   DinoArray = [];
-  currentDino = {};
+  currentDino = { };
   constructor(private _DinoService: DinoService) {
   }
 
@@ -36,3 +36,4 @@ export class DinoListComponent implements OnInit {
   }
 
 }
+
