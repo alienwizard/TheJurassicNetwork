@@ -1,0 +1,14 @@
+<div>
+  <h1>{{title}}</h1>
+  <div>Sök efter din favoritdinosaurie:</div>
+  <input type="text" [(ngModel)]='listFilter' />
+  <div class="searchResult">
+    <h3>Sökt på: {{listFilter}}</h3>
+  </div>
+ <ul *ngIf='DinoArray && DinoArray.length'>
+  <li *ngFor='let Dino of DinoArray | dinoFilter: listFilter' (click)='setCurrentDino(Dino.id)'>
+    <p>{{Dino.title}} - <app-level [level]='Dino.level'></app-level></p>
+  </li>
+ </ul>
+</div>
+<app-dino-details (dinoClicked)='onDinoClicked($event)'>Laddar...</app-dino-details>

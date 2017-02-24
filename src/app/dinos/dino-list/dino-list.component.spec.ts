@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CatListComponent } from './cat-list.component';
+import { DinoListComponent } from './dino-list.component';
 
-describe('CatListComponent', () => {
-  let component: CatListComponent;
-  let fixture: ComponentFixture<CatListComponent>;
+describe('DinoListComponent', () => {
+  let component: DinoListComponent;
+  let fixture: ComponentFixture<DinoListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CatListComponent ]
+      declarations: [ DinoListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CatListComponent);
+    fixture = TestBed.createComponent(DinoListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

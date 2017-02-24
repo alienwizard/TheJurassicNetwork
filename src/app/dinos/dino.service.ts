@@ -9,10 +9,11 @@ import 'rxjs/add/operator/catch';
 
 @Injectable()
 
-export class CatService {
+export class DinoService {
     public URL = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=e57f52bb5ed3d0a7d33519e8b354799a&tags=dinosaurs&sort=interestingness-desc&safe_search=2&media=photos&format=json&nojsoncallback=1&per_page=50&page=1';
-    public currentCatId = new Subject<number>();
-    cat$ = this.currentCatId.asObservable();
+    public currentDinoId = new Subject<number>();
+    public searchString = new Subject<string>();
+    dino$ = this.currentDinoId.asObservable();
     debugger;
 
     constructor(private _http: Http) {}
@@ -56,11 +57,15 @@ export class CatService {
         ];
     }
 
-    setCurrentCat(id: number) {
-        this.currentCatId.next(id);
+    setCurrentDino(id: number) {
+        this.currentDinoId.next(id);
     }
 
-    getCurrentCat(id: number) {
+    dinoSearch(search: string) {
+        this.searchString.next(search);
+    }
+
+    getCurrentDino(id: number) {
         return this.getCats().find((cat) => cat.id === id);
     }
 

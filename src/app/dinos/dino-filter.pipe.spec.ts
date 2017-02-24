@@ -1,8 +1,8 @@
-import { CatFilterPipe } from './cat-filter.pipe';
+import { DinoFilterPipe } from './dino-filter.pipe';
 
 describe('CatFilterPipe', () => {
   it('create an instance', () => {
-    const pipe = new CatFilterPipe();
+    const pipe = new DinoFilterPipe();
     expect(pipe).toBeTruthy();
   });
 });

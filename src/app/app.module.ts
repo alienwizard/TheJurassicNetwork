@@ -4,18 +4,18 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { CatListComponent } from './cats/cat-list/cat-list.component';
-import { CatDetailsComponent } from './cats/cat-list/cat-details/cat-details.component';
-import { CatFilterPipe } from './cats/cat-filter.pipe';
-import { LevelComponent } from './cats/shared/level.component';
-import { CatService } from './cats/cat.service';
+import { DinoListComponent } from './dinos/dino-list/dino-list.component';
+import { DinoDetailsComponent } from './dinos/dino-list/dino-details/dino-details.component';
+import { DinoFilterPipe } from './dinos/dino-filter.pipe';
+import { LevelComponent } from './dinos/shared/level.component';
+import { DinoService } from './dinos/dino.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CatListComponent,
-    CatDetailsComponent,
-    CatFilterPipe,
+    DinoListComponent,
+    DinoDetailsComponent,
+    DinoFilterPipe,
     LevelComponent
   ],
   imports: [

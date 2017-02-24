@@ -1,17 +1,17 @@
-import { CatService } from './cats/cat.service';
+import { DinoService } from './dinos/dino.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [CatService]
+  providers: [DinoService]
 })
 
 export class AppComponent {
-  title = 'Cat Clicker 2';
+  title = 'The Jurassic Network';
 
-  constructor(private _catService: CatService) {
+  constructor(private _dinoService: DinoService) {
   }
 
 
