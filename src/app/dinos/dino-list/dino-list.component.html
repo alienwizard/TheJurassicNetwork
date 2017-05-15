@@ -7,7 +7,9 @@
   </div>
  <ul *ngIf='DinoArray && DinoArray.length'>
   <li *ngFor='let Dino of DinoArray | dinoFilter: listFilter' (click)='setCurrentDino(Dino.id)'>
-    <p>{{Dino.title}} - <app-level [level]='Dino.level'></app-level></p>
+    <a [routerLink]="['/dino', Dino.id]"><p>{{Dino.title}}</p>
+    <img src="https://farm{{Dino.farm}}.staticflickr.com/{{Dino.server}}/{{Dino.id}}_{{Dino.secret}}.jpg" alt="{{Dino.title}}" />
+    </a>
   </li>
  </ul>
 </div>

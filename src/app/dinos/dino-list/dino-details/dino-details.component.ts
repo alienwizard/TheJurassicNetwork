@@ -1,7 +1,10 @@
 import { DinoService } from './../../dino.service';
-import { Component, OnInit, OnChanges, Output, Input, EventEmitter, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnChanges, Output, Input, EventEmitter, OnDestroy, ChangeDetectorRef, NgZone } from '@angular/core';
 import { DinoImageStyles } from '../../styles';
+import { ActivatedRoute, Router } from '@angular/router';
 import {Subscription} from 'rxjs/Subscription';
+import 'rxjs/add/observable/merge';
+import 'rxjs/add/operator/mergeMap';
 
 @Component({
   selector: 'app-dino-details',
@@ -9,20 +12,38 @@ import {Subscription} from 'rxjs/Subscription';
   styleUrls: ['./dino-details.component.css']
 })
 export class DinoDetailsComponent implements OnInit, OnDestroy {
-  currentDino: any = {id: 0, name: 'lajka', image: 'me.png', clicks: 0, level: 0};
+  public currentDino: any;
   public Styles = DinoImageStyles;
 
   @Output () DinoClicked: EventEmitter<string> = new EventEmitter<string>();
-  constructor(private _DinoService: DinoService) {
+
+  constructor(private _router: Router, private _route: ActivatedRoute, private _DinoService: DinoService) {
   }
 
   ngOnInit() {
-    this._DinoService.dino$.subscribe(Dino => this.currentDino = this._DinoService.getCurrentDino(Dino.valueOf()));
+    const currentDino = this._DinoService.setCurrentDino(this._route.snapshot.params['id']);
+    currentDino.mergeMap(
+      dino => this._DinoService.getCurrentDino(dino)
+    ).subscribe(
+      (data) =>   this.currentDino = data[0]);
+
   }
 
   // TODO ugrade messages for Dinoclick
-  imageClicked() {
-    this.DinoClicked.emit(`Katten ${this.currentDino.name} Clickades`);
+  imageClicked(): void {
+    this.DinoClicked.emit(`Dinosaurien ${this.currentDino.title} Clickades`);
+  }
+
+  onBack(): void {
+    this._router.navigate(['/dinos']);
+  }
+
+  like() {
+
+  }
+
+  dislike() {
+
   }
 
   ngOnDestroy() {

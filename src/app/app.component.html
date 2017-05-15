@@ -1,8 +1,22 @@
 <div>
-  <h1>
-    {{title}}
-  </h1>
-  <section>
-    <app-dino-list>Laddar...</app-dino-list>
-  </section>
+  <header>
+    <nav>
+      <ul>
+        <li><a [routerLink]="['/welcome']">Start</a></li>
+        <li><a [routerLink]="['/dinos']">Dinos</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div>
+    <h1>
+      {{title}}
+    </h1>
+    <section>
+      <router-outlet>
+      </router-outlet>
+    </section>
+  </div>
 </div>
+<footer>
+  @ Johan Wendin 2016
+</footer>

@@ -1,9 +1,11 @@
-<div class="CatWrap">
-  <h1 class="CatName">{{currentCat.name}}</h1>
-  <img [src]='currentCat.image'
-        [title]='currentCat.name'
-        [alt]='currentCat.name'
-        [style.width.px]='Styles.imageWidth'
-        (click)='imageClicked()'
-  />
+<div class="DinoWrap">
+  <div class="Dino" *ngIf='currentDino'>
+    <h1 class="DinoName">{{currentDino.title}}</h1>
+    <img src="https://farm{{currentDino.farm}}.staticflickr.com/{{currentDino.server}}/{{currentDino.id}}_{{currentDino.secret}}.jpg" alt="{{currentDino.title}}" />
+  </div> 
+  <ul>
+    <li><button type="button" (click)="onBack()">Tillbaka</button></li>
+    <li><button type="button" (click)="like()" >Gilla denna dino</button></li>
+    <li><button type="button" (click)="dislike()" >Ogilla denna dino</button></li>
+  </ul>
 </div>
